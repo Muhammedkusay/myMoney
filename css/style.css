@@ -288,6 +288,16 @@ header .container nav i div.block {
 .form .buttons .done:hover {
     background-color: #137e63;
 }
+
+@media (max-width: 767px) {
+    .form .buttons {
+        margin-left: 60%;
+    }    
+    .form .buttons div {
+        padding: 6px 12px;
+    }
+}
+
 /* paid today */
 
 /* progress */
