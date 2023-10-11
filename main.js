@@ -250,4 +250,4 @@ function checkNotifications() {
     
 }
 
-localStorage.clear()
+// localStorage.clear()
