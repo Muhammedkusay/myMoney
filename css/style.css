@@ -179,7 +179,6 @@ header .container nav i div.block {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 5px;
     aspect-ratio: 1;
     bottom: 16px;
     cursor: pointer;
@@ -195,7 +194,6 @@ header .container nav i div.block {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 5px;
     aspect-ratio: 1;
     bottom: 16px;
     cursor: pointer;
