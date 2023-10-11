@@ -1,0 +1,432 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --main-clr: #129876;
+    --second-clr: #196250;
+    --third-clr: #333;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 32px;
+    background-color: #f1f1f1;
+}
+
+body .cover {
+    width: 100%;
+    min-height: 100%;
+    display: none;
+    position: absolute;
+    background-color: #333;
+    opacity: .4;
+    z-index: 5;
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+@media(max-width: 767px) {
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+}
+
+/* header */
+header {
+    height: 70px;
+    background-color: #fff;
+    border-bottom: 2px solid var(--main-clr);
+}
+
+header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header .container h2 {
+    color: var(--third-clr);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+header .container h2 span {
+    color: var(--main-clr);
+}
+
+header .container nav {
+    display: flex;
+    align-items: center;
+}
+
+header .container nav i {
+    cursor: pointer;
+    font-size: 1.3em;
+    position: relative;
+}
+
+header .container nav i div {
+    display: none;
+    position: absolute;
+    background-color: crimson;
+    width: 9px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+
+header .container nav i div.block {
+    display: block;
+}
+
+.notifications {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    height: 126px;
+    width: 260px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 3px solid var(--main-clr);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.notifications.block {
+    display: block;
+}
+
+.notifications p {
+    padding: 8px 0;
+}
+
+.notifications .ok {
+    color: #fff;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: 4px;
+    margin-top: 12px;
+    padding: 2px 12px 4px;
+    background-color: var(--main-clr);
+}
+
+.notifications .ok:hover {
+    background-color: #1b6d59;
+}
+
+/* dashboard */
+.dashboard .container > h2 {
+    font-size: 26px;
+    padding: 16px 0 32px;
+}
+
+/* balance-and-activity */
+.balance-and-activity {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.balance-and-activity h2 {
+    padding: 16px 0;
+}
+
+.balance-and-activity .balance {
+    width: 40%;
+    padding: 16px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.balance-and-activity .balance p {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.balance-and-activity .balance h2 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.balance-and-activity .balance .change-balance {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 16px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 24px;
+}
+
+.balance-and-activity .balance .add-money {
+    color: #fff;
+    padding: 6px 15px 12px;
+    bottom: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: var(--main-clr);
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+.balance-and-activity .balance .remove-money {
+    color: #fff;
+    padding: 6px 18px 12px;
+    bottom: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: crimson;
+    font-size: 1.25em;
+    font-weight: 700;
+
+}
+
+.balance-and-activity .balance .add-money:hover {
+    background-color: #118064;
+}
+.balance-and-activity .balance .remove-money:hover {
+    background-color: rgb(189, 16, 50);
+}
+
+@media (width < 767px) {
+    .balance-and-activity {
+        flex-direction: column;
+    }
+
+    .balance-and-activity .balance {
+        height: 225px;
+        width: 100%;
+    }
+}
+
+/* balance pop up form */
+.form {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.form input {
+    width: 100%;
+    padding: 4px 12px 7px;
+    margin-bottom: 8px;
+    outline: none;
+    font-weight: 400;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border-width: 0;
+    background-color: #eee;
+    transition: all .2s;
+    border: 1px solid var(--main-clr);
+}
+
+.form input::placeholder {
+    color: #c2c2c2;
+}  
+
+.form input:focus {
+    background-color: #fff;
+}  
+
+.form .buttons {
+    display: flex;
+    gap: 6px;
+    margin-left: 60.5%;
+    margin-top: 12px;
+}
+
+.form .buttons div {
+    padding: 3px 8px 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.form .buttons .cancel {
+    background-color: crimson;
+}
+
+.form .buttons .done {
+    background-color: #129876;
+}
+.form .buttons .cancel:hover {
+    background-color: rgb(194, 22, 57);
+}
+
+.form .buttons .done:hover {
+    background-color: #137e63;
+}
+/* paid today */
+
+/* progress */
+.paid-today {
+    width: 60%;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.paid-today > p {
+    width: fit-content;
+    margin: 0 auto 10px;
+}
+
+.progress {
+    width: 160px;
+    aspect-ratio: 1;
+    position: relative;
+    margin: 0 auto;
+}
+
+.progress .outer {
+    width: 160px;
+    aspect-ratio: 1;
+    padding: 20px;
+    border-radius: 50vh;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, .15);
+}
+
+.progress .inner {
+    width: 120px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50vh;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, .2),
+                0.5px 0.5px 0px rgba(0, 0, 0, .15),
+                0px 12px 10px -10px rgba(0, 0, 0, .05);
+}
+
+.progress .inner .number {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--second-clr);
+}
+
+.progress .inner .number span {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.progress svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress circle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    animation: anim 1s ease-in-out forwards;
+}
+
+@keyframes anim {
+    0% {
+        stroke-dashoffset: 472;
+    }
+}
+
+
+@media (width < 767px) {
+    .paid-today{
+        width: 100%;
+    }
+}
+
+/* activity */
+.activity {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.activity .titles {
+    display: flex;
+    gap: 1%;
+    padding: 16px 0 8px;
+}
+
+.activity .titles h3 {
+    width: 24%;
+}
+
+.activity .boxes .box {
+    display: flex;
+    gap: 1%;
+    padding: 16px 0;
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.activity .boxes .box:last-child {
+    padding-bottom: 0;
+    border-bottom-width: 0;
+}
+
+.activity .boxes .box div {
+    width: 24%;
+}
+
+.activity .boxes .box div i.fa-caret-up {
+    font-size: 18px;
+    color: var(--main-clr);
+}
+
+.activity .boxes .box div i.fa-caret-down {
+    font-size: 18px;
+    color: crimson;
+}
+
+@media (max-width: 767px) {
+    .activity p {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .activity .titles {
+        display: none;
+    }
+    .activity .boxes .box {
+        gap: 4px;
+        position: relative;
+        flex-direction: column;
+    }
+    .activity .boxes .box div i {
+        top: 50%;
+        right: 16px;
+        font-size: 22px;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+    .activity .boxes .box div i.fa-caret-down,
+    .activity .boxes .box div i.fa-caret-down {
+        font-size: 21px;
+    }
+}

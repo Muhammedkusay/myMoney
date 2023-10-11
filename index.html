@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>myMoney</title>
+</head>
+<body>
+    <div class="cover"></div>
+    
+    <header>
+        <div class="container">
+            <h2><span>my</span>Money</h2>
+            <nav>
+                <i class="fa-regular fa-bell"><div></div></i>
+                <div class="notifications">
+                    <h3>Notifications</h3>
+                    <div class="cards">
+                        <div class="card">
+                            <p>You paid more than today's limit!</p>
+                        </div>
+                        <div class="ok">OK</div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <div class="container">
+            <h2>Dashboard</h2>
+            <div class="balance-and-activity">
+
+                <div class="balance">
+                    <p>Your Balance</p>
+                    <h2>1000&#8378;</h2>
+                    <div class="change-balance">
+                        <div class="add-money" title="Add Money">+</div>
+                        <div class="remove-money" title="Pay Money">-</div>
+                    </div>
+                </div>
+
+                <div class="balance-add-form form">
+                    <input type="text" class="amount" placeholder="Amount">
+                    <input type="text" class="description" placeholder="Description">
+                    <div class="buttons">
+                        <div class="cancel">Cancel</div>
+                        <div class="done">Done</div>
+                    </div>
+                </div>
+
+                <div class="balance-remove-form form">
+                    <input type="text" class="amount" placeholder="Amount">
+                    <input type="text" class="description" placeholder="Description">
+                    <div class="buttons">
+                        <div class="cancel">Cancel</div>
+                        <div class="done">Done</div>
+                    </div>
+                </div>
+
+                <div class="paid-today">
+
+                    <p>Today's Usable Money</p>
+
+                    <div class="progress">
+
+                        <div class="outer">
+                            <div class="inner">
+                                <div class="number"><span>100</span>/100&#8378;</div>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                            <defs>
+                               <linearGradient id="GradientColor">
+                                  <stop offset="0%" stop-color="#00cfa9" />
+                                  <stop offset="100%" stop-color="#00866d" />
+                               </linearGradient>
+                            </defs>
+                            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                        </svg>
+        
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="activity">
+                <p>Today's Activity</p>
+                <div class="titles">
+                    <h3>Description</h3>
+                    <h3>Amount</h3>
+                    <h3>Date</h3>
+                    <h3>P/R</h3>
+                </div>
+                <div class="boxes">
+                    <!-- js will append -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
