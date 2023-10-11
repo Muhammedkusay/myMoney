@@ -175,23 +175,33 @@ header .container nav i div.block {
 
 .balance-and-activity .balance .add-money {
     color: #fff;
-    padding: 6px 15px 12px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+    aspect-ratio: 1;
     bottom: 16px;
     cursor: pointer;
     border-radius: 50%;
     background-color: var(--main-clr);
-    font-size: 1.25em;
+    font-size: 1.4em;
     font-weight: 700;
 }
 
 .balance-and-activity .balance .remove-money {
     color: #fff;
-    padding: 6px 18px 12px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+    aspect-ratio: 1;
     bottom: 16px;
     cursor: pointer;
     border-radius: 50%;
     background-color: crimson;
-    font-size: 1.25em;
+    font-size: 1.4em;
     font-weight: 700;
 
 }
