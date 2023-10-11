@@ -53,7 +53,7 @@ let balanceEl = document.querySelector(".balance h2");
 if(localStorage.getItem("balance")) {
     updateBalance();
 } else {
-    localStorage.setItem("balance", 4280);
+    localStorage.setItem("balance", 0);
     updateBalance();
 }
 
@@ -250,4 +250,4 @@ function checkNotifications() {
     
 }
 
-// localStorage.clear()
+localStorage.clear()
