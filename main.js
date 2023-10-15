@@ -219,8 +219,6 @@ function removeMoneyByForm() {
         localStorage.setItem("boxes", JSON.stringify(boxesArr));
         updateActivity();
 
-        checkNotifications();
-
         // close form
         R_amountInput.value = "";
         cover.style.display = "none";
