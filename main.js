@@ -91,7 +91,6 @@ changePaidToday.addEventListener("click", () => {
 
                 localStorage.setItem("paid-today-limit", parseInt(changePaidTodayLimit.value));
                 localStorage.setItem("paid-today", parseInt(changePaidTodayLimit.value));
-                changePaidTodayLimit.value = "";
 
                 updatePaidToday(localStorage.getItem("paid-today-limit"));
                 updatePaidTodayLimit(localStorage.getItem("paid-today-limit"));
@@ -99,6 +98,7 @@ changePaidToday.addEventListener("click", () => {
 
                 // close form
                 cover.style.display = "none";
+                changePaidTodayLimit.value = "";
                 changePaidTodayForm.style.display = "none";
 
             }
@@ -108,6 +108,7 @@ changePaidToday.addEventListener("click", () => {
     changePaidTodayCancel.addEventListener("click", () => {         
         // close form
         cover.style.display = "none";
+        changePaidTodayLimit.value = "";
         changePaidTodayForm.style.display = "none";
     });
 
